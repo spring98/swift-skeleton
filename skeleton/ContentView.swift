@@ -15,34 +15,33 @@ struct ContentView : View {
     }
 }
 
-
 var bodySkeleton: BodySkeleton?
 var bodySkeletonAnchor = AnchorEntity()
 
-
-
 struct ARViewContainer: UIViewRepresentable {
     
+    // ARView 라는 타입을 UIViewType 이라는 별명으로 사용하겠다.
     typealias UIViewType = ARView
     
+    // initState 같은 메소드
     func makeUIView(context: Context) -> ARView {
         
+        // ARView 객체를 생성하고
+        // 이 객체로 body tracking 을 시작한다.
+        //      tracking 내 session 을 주기적으로 처리한다.
+        //          여러 앵커들 중에 하나의 앵커를 고른다.
+        //              하나의 앵커를 ARBodyAnchor 로 캐스팅 한다.
+        //                  스켈레톤이 쌔삥이면 앵커를 추가하고 이미 사용했다면 캐스팅된 앵커를 스켈레톤에 업데이트 한다.
+        // 이 객체의 씬에 앵커를 추가한다.
+        
         let arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-//        let boxAnchor = try! Experience.loadBox()
-        // Add the box anchor to the scene
-        
         arView.setupForBodyTracking()
-        
-        
-//        arView.scene.anchors.append(boxAnchor)
         arView.scene.addAnchor(bodySkeletonAnchor)
         
         return arView
-        
     }
     
+    // build 같은 메소드
     func updateUIView(_ uiView: ARView, context: Context) {}
     
 }
@@ -52,23 +51,25 @@ extension ARView : ARSessionDelegate{
     func setupForBodyTracking() {
         let config = ARBodyTrackingConfiguration()
         self.session.run(config)
-        
+        // 파티 책임자가 위임해주면 내가 처리하겠다.
         self.session.delegate = self
     }
+
     
+    //    optional func session(_ session: ARSession, didUpdate frame: ARFrame)
+    //    optional func session(_ session: ARSession, didAdd anchors: [ARAnchor])
+    //    optional func session(_ session: ARSession, didUpdate anchors: [ARAnchor])
+    //    optional func session(_ session: ARSession, didRemove anchors: [ARAnchor])
     
+    // 첫번째 파티 참가자가 음식과 노래를 준비한다.
     public func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
             if let bodyAnchor = anchor as? ARBodyAnchor {
 //                print("Update bodyAnchor")
-//
 //                let skeleton = bodyAnchor.skeleton
-//
 //                let rootJointTransform = skeleton.modelTransform(for: .root)!
 //                let rootJointPosition = simd_make_float3(rootJointTransform.columns.3)
 //                print("root : \(rootJointPosition)")
-//
-//
 //                let leftHandTransform = skeleton.modelTransform(for: .leftHand)!
 //                let leftHandOffset = simd_make_float3(leftHandTransform.columns.3)
 //                let leftHandPosition = rootJointPosition + leftHandOffset
@@ -87,65 +88,5 @@ extension ARView : ARSessionDelegate{
             }
         }
     }
+
 }
-
-class BodySkeleton: Entity {
-    
-    var joints: [String: Entity] = [:]
-    
-    required init(for bodyAnchor: ARBodyAnchor) {
-        super.init()
-        
-        for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
-            
-            let jointRadius: Float = 0.03
-            let jointColor: UIColor = .green
-            
-            let jointEntity = makeJoint(radius: jointRadius, color: jointColor)
-            joints[jointName] = jointEntity
-            self.addChild(jointEntity)
-            
-        }
-    }
-    
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-    
-    func makeJoint(radius: Float, color: UIColor) -> Entity {
-        let mesh = MeshResource.generateSphere(radius: radius)
-        let material = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
-        let modelEntity = ModelEntity(mesh: mesh, materials: [material])
-        
-        return modelEntity
-    }
-    
-    func udpate(with bodyAnchor: ARBodyAnchor) {
-        let rootPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-        
-        for jointName in ARSkeletonDefinition.defaultBody3D.jointNames {
-            if let jointEntity = joints[jointName], let jointTransform = bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue: jointName)) {
-                let jointOffset = simd_make_float3(jointTransform.columns.3)
-                jointEntity.position = rootPosition + jointOffset
-                jointEntity.orientation = Transform(matrix: jointTransform).rotation
-            }
-            
-        }
-        
-        
-    }
-    
-}
-
-
-
-
-
-#if DEBUG
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-#endif
