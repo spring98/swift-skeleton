@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치를 제공해 주시겠습니까?ㅠㅠ</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>위치를 제공해 주시겠습니까?ㅜㅜ</string>
+	<key>NMFClientId</key>
+	<string>ofwbh86y33</string>
+</dict>
+</plist>

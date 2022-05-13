@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32CA5BD93DA22C563F15D28B /* Pods_skeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950AA93B8753B2D7B0D7D2C /* Pods_skeleton.framework */; };
 		6F110FD22828BDA400DED2D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F110FD12828BDA400DED2D4 /* AppDelegate.swift */; };
 		6F110FD42828BDA400DED2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F110FD32828BDA400DED2D4 /* ContentView.swift */; };
 		6F110FD62828BDA400DED2D4 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 6F110FD52828BDA400DED2D4 /* Experience.rcproject */; };
 		6F110FD82828BDA400DED2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F110FD72828BDA400DED2D4 /* Assets.xcassets */; };
 		6F110FDB2828BDA400DED2D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F110FDA2828BDA400DED2D4 /* Preview Assets.xcassets */; };
+		6F48571B282D7A4F0087C6CA /* NaverMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F48571A282D7A4F0087C6CA /* NaverMap.swift */; };
+		6F48571E282DFFDD0087C6CA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F48571D282DFFDD0087C6CA /* LocationService.swift */; };
 		6F564F62282AE723000075A2 /* BodySkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F564F61282AE723000075A2 /* BodySkeleton.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +25,13 @@
 		6F110FD52828BDA400DED2D4 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		6F110FD72828BDA400DED2D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F110FDA2828BDA400DED2D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6F48571A282D7A4F0087C6CA /* NaverMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMap.swift; sourceTree = "<group>"; };
+		6F48571C282D7FC40087C6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6F48571D282DFFDD0087C6CA /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		6F564F61282AE723000075A2 /* BodySkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySkeleton.swift; sourceTree = "<group>"; };
+		97335D0113CA8C89C828D1E9 /* Pods-skeleton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skeleton.debug.xcconfig"; path = "Target Support Files/Pods-skeleton/Pods-skeleton.debug.xcconfig"; sourceTree = "<group>"; };
+		A950AA93B8753B2D7B0D7D2C /* Pods_skeleton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_skeleton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D51DC37F53F55A47F3305BE9 /* Pods-skeleton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-skeleton.release.xcconfig"; path = "Target Support Files/Pods-skeleton/Pods-skeleton.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32CA5BD93DA22C563F15D28B /* Pods_skeleton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +51,8 @@
 			children = (
 				6F110FD02828BDA400DED2D4 /* skeleton */,
 				6F110FCF2828BDA400DED2D4 /* Products */,
+				A4124C656D474AEB58FEB394 /* Pods */,
+				B57E47C113B3FB1FB4F1A28F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,12 +67,15 @@
 		6F110FD02828BDA400DED2D4 /* skeleton */ = {
 			isa = PBXGroup;
 			children = (
+				6F48571C282D7FC40087C6CA /* Info.plist */,
 				6F110FD12828BDA400DED2D4 /* AppDelegate.swift */,
 				6F110FD32828BDA400DED2D4 /* ContentView.swift */,
 				6F110FD52828BDA400DED2D4 /* Experience.rcproject */,
 				6F110FD72828BDA400DED2D4 /* Assets.xcassets */,
 				6F110FD92828BDA400DED2D4 /* Preview Content */,
 				6F564F61282AE723000075A2 /* BodySkeleton.swift */,
+				6F48571A282D7A4F0087C6CA /* NaverMap.swift */,
+				6F48571D282DFFDD0087C6CA /* LocationService.swift */,
 			);
 			path = skeleton;
 			sourceTree = "<group>";
@@ -73,6 +88,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A4124C656D474AEB58FEB394 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97335D0113CA8C89C828D1E9 /* Pods-skeleton.debug.xcconfig */,
+				D51DC37F53F55A47F3305BE9 /* Pods-skeleton.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B57E47C113B3FB1FB4F1A28F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A950AA93B8753B2D7B0D7D2C /* Pods_skeleton.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F110FDE2828BDA400DED2D4 /* Build configuration list for PBXNativeTarget "skeleton" */;
 			buildPhases = (
+				4F5EF3ADD6567C6A4024D879 /* [CP] Check Pods Manifest.lock */,
 				6F110FCA2828BDA400DED2D4 /* Sources */,
 				6F110FCB2828BDA400DED2D4 /* Frameworks */,
 				6F110FCC2828BDA400DED2D4 /* Resources */,
+				4AC869B95E5EE9E562176258 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,14 +172,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AC869B95E5EE9E562176258 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-skeleton/Pods-skeleton-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-skeleton/Pods-skeleton-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-skeleton/Pods-skeleton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F5EF3ADD6567C6A4024D879 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-skeleton-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6F110FCA2828BDA400DED2D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6F564F62282AE723000075A2 /* BodySkeleton.swift in Sources */,
+				6F48571B282D7A4F0087C6CA /* NaverMap.swift in Sources */,
 				6F110FD42828BDA400DED2D4 /* ContentView.swift in Sources */,
 				6F110FD22828BDA400DED2D4 /* AppDelegate.swift in Sources */,
+				6F48571E282DFFDD0087C6CA /* LocationService.swift in Sources */,
 				6F110FD62828BDA400DED2D4 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +349,7 @@
 		};
 		6F110FDF2828BDA400DED2D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97335D0113CA8C89C828D1E9 /* Pods-skeleton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -280,6 +359,7 @@
 				DEVELOPMENT_TEAM = GU33PWYX8W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = skeleton/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +382,7 @@
 		};
 		6F110FE02828BDA400DED2D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D51DC37F53F55A47F3305BE9 /* Pods-skeleton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +392,7 @@
 				DEVELOPMENT_TEAM = GU33PWYX8W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = skeleton/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
